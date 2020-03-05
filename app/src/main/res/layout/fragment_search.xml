@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/colorPrimary">
+
+    <RelativeLayout
+        android:id="@+id/search_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/white"
+        android:layout_marginTop="@dimen/generic_margin"
+        android:layout_marginStart="@dimen/generic_margin"
+        android:layout_marginEnd="@dimen/generic_margin"
+        android:layout_marginBottom="@dimen/generic_margin">
+        <ImageView
+            android:id="@+id/search_icon"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/baseline_search_24"
+            android:layout_marginStart="@dimen/small_margin"
+            android:outlineSpotShadowColor="@color/colorPrimary"
+            android:layout_centerVertical="true"/>
+        <EditText
+            android:id="@+id/search_artist_edit_text"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:singleLine="true"
+            android:inputType="textCapSentences|textAutoCorrect|textAutoComplete"
+            android:layout_toRightOf="@+id/search_icon"
+            android:layout_toLeftOf="@+id/cross"
+            android:background="@color/white"
+            android:hint="Search Artist here "
+            android:paddingLeft="@dimen/generic_margin"
+            android:paddingStart="@dimen/generic_margin"
+            android:paddingEnd="@dimen/small_margin"
+            android:textColor="@color/colorPrimary"/>
+        <ImageView
+            android:id="@+id/cross"
+            android:clickable="true"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/baseline_cancel_24"
+            android:layout_marginEnd="@dimen/small_margin"
+            android:outlineSpotShadowColor="@color/colorPrimary"
+            android:layout_centerVertical="true"
+            android:layout_alignParentEnd="true"/>
+    </RelativeLayout>
+
+
+
+    <TextView
+        android:id="@+id/search_artist_no_results_message"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:gravity="center"
+        android:textColor="@color/white"
+        android:textSize="@dimen/general_text_size"
+        android:visibility="gone"
+        tools:text="No results message"
+        tools:visibility="visible"/>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/search_artist_recyclerview"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@id/search_layout"/>
+
+    <ProgressBar
+        android:id="@+id/search_artist_progress"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:indeterminateTint="@color/grey"
+        />
+
+
+
+</RelativeLayout>
