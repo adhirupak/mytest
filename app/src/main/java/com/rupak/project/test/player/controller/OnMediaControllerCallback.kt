@@ -6,7 +6,7 @@ package com.rupak.project.test.player.controller
  *
  * and also to make an interaction between [PlayerService] & [MediaController]
  *
- * @author ZARA
+ *
  * */
 interface OnMediaControllerCallback {
 

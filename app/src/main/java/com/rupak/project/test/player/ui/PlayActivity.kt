@@ -50,7 +50,7 @@ class PlayActivity : BaseSongPlayerActivity() {
         })
 
         playerViewModel.isPlayData.observe(this, Observer {
-            song_player_toggle_image_view.setImageResource(if (it) R.drawable.ic_pause_vector else R.drawable.ic_play_vector)
+            song_player_toggle_image_view.setImageResource(if (it) android.R.drawable.ic_media_pause else android.R.drawable.ic_media_play )
         })
 
         playerViewModel.playerData.observe(this, Observer {

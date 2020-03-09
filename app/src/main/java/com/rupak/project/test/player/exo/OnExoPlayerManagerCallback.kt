@@ -2,14 +2,7 @@ package com.rupak.project.test.player.exo
 
 import com.rupak.project.test.player.model.ASong
 
-/**
- * To make an interaction between [ExoPlayerManager]
- * & [MediaController]
- *
- * and to return result from [ExoPlayerManager]
- *
- * @author Zara
- * */
+
 interface OnExoPlayerManagerCallback {
 
     fun getCurrentSongState(): Int
@@ -33,11 +26,7 @@ interface OnExoPlayerManagerCallback {
     fun seekTo(position: Long)
 
 
-    /**
-     * This class gives the information about current song
-     * (position, state of completion, when it`s changed, ...)
-     *
-     * */
+
     interface OnSongStateCallback {
 
         fun onCompletion()

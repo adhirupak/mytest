@@ -9,9 +9,9 @@ import java.util.*
 
 
 /**
- * This class is used to interact with [ExoPlayerManager] & [QueueManager]
+ * This class is used to interact with [ExoPlayerManager]
  *
- * @author ZARA
+ *
  * */
 class MediaController(
     private val onExoPlayerManagerCallback: OnExoPlayerManagerCallback,

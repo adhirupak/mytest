@@ -34,7 +34,7 @@ abstract class ASong(
         if (if (this.albumPic != null) this.albumPic != song?.albumPic else song?.albumPic != null)
             return false
         return if (this.artist != null) this.artist == song?.artist else song?.artist == null
-    }
+}
 
     override fun hashCode(): Int {
         var result = songId?.xor(songId!!.ushr(32))

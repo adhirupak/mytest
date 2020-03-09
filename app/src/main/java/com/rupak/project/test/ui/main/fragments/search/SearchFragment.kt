@@ -35,6 +35,7 @@ class SearchFragment : Fragment(), TextWatcher {
     private lateinit var recyclerView: RecyclerView
     private lateinit var progressBar: ProgressBar
     private lateinit var noResultsMessage: TextView
+    private lateinit var headerLayout: LinearLayout
     private lateinit var searchArtistAdapter: SearchArtistAdapter
     private lateinit var searchSubject: PublishSubject<String>
     private val compositeDisposable = CompositeDisposable()
@@ -102,12 +103,16 @@ class SearchFragment : Fragment(), TextWatcher {
         progressBar.visibility = if(state.isLoading) View.VISIBLE else View.GONE
         val artist = state.artistList ?: listOf()
         if(state.showNoResultMessage){
+            headerLayout.visibility = View.GONE
             noResultsMessage.visibility = View.VISIBLE
             noResultsMessage.text = String.format("No artist found for %s", state.lastSearchArtist)
         }else{
             noResultsMessage.visibility =View.GONE
+
         }
+        if(artist.isEmpty()){headerLayout.visibility = View.GONE} else  headerLayout.visibility = View.VISIBLE
         searchArtistAdapter.setArtist(artist,state.lastSearchArtist)
+
     }
 
 
@@ -117,6 +122,7 @@ class SearchFragment : Fragment(), TextWatcher {
         searchEditText = search_artist_edit_text
         searchEditText.addTextChangedListener(this)
         crossImageView = cross
+        headerLayout = list_header
         crossImageView.visibility = View.INVISIBLE
         crossImageView.setOnClickListener(View.OnClickListener { searchEditText.setText("") })
         progressBar = search_artist_progress

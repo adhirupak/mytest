@@ -24,7 +24,7 @@ import com.squareup.picasso.Picasso
 /**
  * This class is responsible for managing Notification
  *
- * @author ZARA
+ *
  * */
 class MediaNotificationManager @Throws(RemoteException::class)
 constructor(private val mService: PlayerService) : BroadcastReceiver() {
