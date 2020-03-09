@@ -16,7 +16,6 @@ import android.widget.RemoteViews
 import androidx.annotation.RequiresApi
 import androidx.core.app.NotificationCompat
 import com.rupak.project.test.R
-import com.rupak.project.test.player.BaseSongPlayerActivity
 import com.rupak.project.test.player.exo.PlaybackState
 import com.rupak.project.test.player.model.ASong
 import com.rupak.project.test.player.service.PlayerService
@@ -163,9 +162,7 @@ constructor(private val mService: PlayerService) : BroadcastReceiver() {
         mService.getCurrentSong()?.let {
             intent.putExtra(ASong::class.java.name, it)
         }
-        mService.getCurrentSongList()?.let {
-            intent.putExtra(BaseSongPlayerActivity.SONG_LIST_KEY, it)
-        }
+
         val stackBuilder = TaskStackBuilder.create(mService)
         stackBuilder.addNextIntentWithParentStack(intent)
         return stackBuilder.getPendingIntent(

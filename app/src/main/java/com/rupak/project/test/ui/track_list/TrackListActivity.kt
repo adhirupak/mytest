@@ -109,7 +109,7 @@ class TrackListActivity : AppCompatActivity() {
 
         trackListAdapter = TrackListAdapter(
             this,
-            artistName
+            artistName!!,posterUrl
         )
         progressBar = get_track_progress
         recyclerView = track_list_view

@@ -13,4 +13,5 @@
     <color name="grey_in_black">#929292</color>
     <color name="colorTextPrimary">#202020</color>
     <color name="colorTextSecondary">#737373</color>
+    <color name="colorPrimaryLight">#4A6572</color>
 </resources>

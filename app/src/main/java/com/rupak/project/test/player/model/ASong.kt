@@ -3,7 +3,7 @@ package com.rupak.project.test.player.model
 import android.os.Parcelable
 
 abstract class ASong(
-    var songId: Int = 0,
+    var songId: Int? = 0,
     var title: String? = "",
     var albumPic: String? = "",
     var artist: String? = "",
@@ -37,8 +37,8 @@ abstract class ASong(
     }
 
     override fun hashCode(): Int {
-        var result = songId xor songId.ushr(32)
-        result = 31 * result + if (title != null) title.hashCode() else 0
+        var result = songId?.xor(songId!!.ushr(32))
+        result = 31 * result!! + if (title != null) title.hashCode() else 0
         result = 31 * result + if (albumPic != null) albumPic.hashCode() else 0
         result = 31 * result + if (artist != null) artist.hashCode() else 0
         return result

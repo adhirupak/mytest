@@ -104,6 +104,7 @@ open class BaseSongPlayerActivity : AppCompatActivity(), OnPlayerActionCallback,
 
     override fun onSongEnded() {
         playerViewModel.onComplete()
+        finish()
     }
 
 
@@ -125,10 +126,9 @@ open class BaseSongPlayerActivity : AppCompatActivity(), OnPlayerActionCallback,
         }
     }
 
-    companion object {
 
-        private val TAG = BaseSongPlayerActivity::class.java.name
-        const val SONG_LIST_KEY = "SONG_LIST_KEY"
+
+    companion object {
         private const val ACTION_PLAY_SONG = 1
 
     }

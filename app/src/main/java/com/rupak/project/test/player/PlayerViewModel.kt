@@ -3,13 +3,12 @@ package com.rupak.project.test.player
 import android.util.Log
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
-import androidx.lifecycle.ViewModel
-import com.rupak.project.test.player.OnPlayerActionCallback
+import com.rupak.project.test.common.BaseViewModel
 import com.rupak.project.test.player.model.ASong
 import com.rupak.project.test.player.utils.AppConstants
 
 
-class PlayerViewModel : ViewModel() {
+class PlayerViewModel : BaseViewModel() {
 
     private val _playerData = MutableLiveData<ASong>()
     val playerData: LiveData<ASong> = _playerData
@@ -107,6 +106,18 @@ class PlayerViewModel : ViewModel() {
         }
     }
 
+    fun play() {
+        if (_isPlayData.value == true) {
+            mNavigator?.pause()
+        } else {
+            _playerData.value?.let {
+                mNavigator?.play(it)
+            }
+        }
+    }
+
+
+
 
 
 
@@ -115,6 +126,7 @@ class PlayerViewModel : ViewModel() {
 
 
     fun seekTo(position: Long) {
+
         _songPositionTextData.value = AppConstants.formatTimeInMillisToString(position)
         _songPositionData.value = position.toInt()
         mNavigator?.seekTo(position)

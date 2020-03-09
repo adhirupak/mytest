@@ -70,9 +70,9 @@ class PlayerService : Service(), OnMediaControllerCallback {
         return mMediaController?.getCurrentSong()
     }
 
-    fun getCurrentSongList(): ArrayList<ASong>? {
-        return mMediaController?.getCurrentSongList()
-    }
+
+
+
 
     override fun onSongChanged() {
         mListener?.updateSongData(getCurrentSong())

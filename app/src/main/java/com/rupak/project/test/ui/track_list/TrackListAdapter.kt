@@ -7,7 +7,9 @@ import android.view.ViewGroup
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.rupak.project.test.R
+import com.rupak.project.test.entity.Song
 import com.rupak.project.test.entity.Tracks
+import com.rupak.project.test.player.ui.PlayActivity
 import com.rupak.project.test.ui.track_list.TrackListAdapter.BaseViewHolder
 import com.rupak.project.test.ui.track_list.view_utils.HeaderItem
 import com.yuyang.stickyheaders.AdapterDataProvider
@@ -16,7 +18,7 @@ import java.util.*
 /**
  * Created By Rupak Adhikari.
  */
-class TrackListAdapter(private val context: Context, private val artist: String) :
+class TrackListAdapter(private val context: Context, private val artist: String,private val albumPic: String) :
     RecyclerView.Adapter<BaseViewHolder>(), AdapterDataProvider {
     private val dataList: MutableList<Any> =
         ArrayList()
@@ -52,6 +54,10 @@ class TrackListAdapter(private val context: Context, private val artist: String)
             itemViewHolder.titleTextView.text = item.title
             itemViewHolder.messageTextView.text = artist
             itemViewHolder.serialNoTextView.text = item.serialNumber.toString()
+            itemViewHolder.itemView.setOnClickListener(View.OnClickListener {
+                val song = Song(item.id,item.title,item.preview,artist,albumPic)
+                PlayActivity.start(context,song)
+            })
         }
     }
 
@@ -91,6 +97,7 @@ class TrackListAdapter(private val context: Context, private val artist: String)
             titleTextView = itemView.findViewById(R.id.name)
             messageTextView = itemView.findViewById(R.id.artist_name)
             serialNoTextView = itemView.findViewById(R.id.serail_no)
+
         }
     }
 
