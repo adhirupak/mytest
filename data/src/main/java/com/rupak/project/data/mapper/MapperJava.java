@@ -1,6 +1,6 @@
 package com.rupak.project.data.mapper;
 
-import com.rupak.project.data.entities.DataItem;
+import com.rupak.project.data.entities.artist_search.DataItem;
 import com.rupak.project.data.entities.DataItemEntity;
 
 import java.util.ArrayList;

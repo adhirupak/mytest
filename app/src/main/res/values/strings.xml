@@ -1,4 +1,11 @@
 <resources>
     <string name="app_name">Test</string>
-    <string name="api_base_url" >https://api.deezer.com</string>
+    <string name="api_base_url">https://api.deezer.com</string>
+    <string name="title_activity_album_list">AlbumListActivity</string>
+    <string name="transition_poster">poster</string>
+    <string name="title_activity_track_list">TrackListActivity</string>
+    <string name="notification_channel">APP_Channel_ID</string>
+    <string name="notification_channel_description">Channel ID for APP</string>
+
+    <string name="action_settings">Settings</string>
 </resources>

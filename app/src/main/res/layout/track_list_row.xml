@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:padding="@dimen/x_small_margin"
+    android:clickable="true"
+    android:foreground="?attr/selectableItemBackgroundBorderless"
+    android:background="@color/colorPrimary">
+
+    <LinearLayout
+        android:id="@+id/layout_details"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/serail_no"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <TextView
+            android:id="@+id/name"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="@dimen/small_margin"
+            android:text="TextView"
+            android:textColor="@color/white"
+            android:ellipsize="end"
+            android:maxLines="1"
+            android:textAppearance="@style/TextAppearance.AppCompat.Title"/>
+
+        <TextView
+            android:id="@+id/artist_name"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingLeft="@dimen/small_margin"
+            android:paddingRight="@dimen/small_margin"
+            android:paddingBottom="@dimen/x_small_margin"
+            android:text="TextView"
+            android:ellipsize="end"
+            android:maxLines="1"
+            android:textAppearance="@style/TextAppearance.AppCompat.Title"
+            android:textColor="@color/grey_in_black"
+            android:textSize="@dimen/general_text_size"/>
+    </LinearLayout>
+
+
+    <TextView
+        android:id="@+id/serail_no"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:minWidth="40dp"
+        android:padding="@dimen/small_margin"
+        android:text="1"
+        android:ellipsize="end"
+        android:maxLines="1"
+        android:textAppearance="@style/TextAppearance.AppCompat.Title"
+        android:textColor="@color/grey_in_black"
+        android:textSize="@dimen/general_text_size"
+        app:layout_constraintBottom_toBottomOf="@+id/layout_details"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/layout_details" />
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,5 +1,5 @@
 package com.rupak.project.test.di.module.search
-import com.rupak.project.test.ui.fragments.search.SearchFragment
+import com.rupak.project.test.ui.main.fragments.search.SearchFragment
 import dagger.Subcomponent
 
 /**

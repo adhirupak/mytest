@@ -10,4 +10,7 @@
     <color name="light_grey">#EDEDED</color>
     <color name="grey">#c2c2c2</color>
     <color name="dark_grey">#9c9c9c</color>
+    <color name="grey_in_black">#929292</color>
+    <color name="colorTextPrimary">#202020</color>
+    <color name="colorTextSecondary">#737373</color>
 </resources>

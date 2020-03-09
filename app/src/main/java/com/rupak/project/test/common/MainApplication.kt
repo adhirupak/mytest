@@ -7,16 +7,22 @@ import com.rupak.project.test.di.component.MainAppComponent
 import com.rupak.project.test.di.module.ApplicationModule
 import com.rupak.project.test.di.module.DataModule
 import com.rupak.project.test.di.module.NetModule
+import com.rupak.project.test.di.module.albums.AlbumModule
+import com.rupak.project.test.di.module.albums.GetAlbumsComponent
 import com.rupak.project.test.di.module.search.SearchModule
 import com.rupak.project.test.di.module.search.SearchSubComponent
+import com.rupak.project.test.di.module.tracks.GetTracksComponent
+import com.rupak.project.test.di.module.tracks.TracksModule
 
 /**
  * Created By Rupak Adhikari
  */
 class MainApplication: Application() {
 
+     var getTracksComponent: GetTracksComponent? = null
     lateinit var mainComponent: MainAppComponent
     private var searchComponent: SearchSubComponent? = null
+    private var getAlbumComponent: GetAlbumsComponent? = null
 
    companion object{
         lateinit var mInstance : MainApplication
@@ -47,8 +53,26 @@ class MainApplication: Application() {
         return searchComponent!!
     }
 
+    fun createAlbumListComponent() : GetAlbumsComponent{
+        getAlbumComponent = mainComponent.plus(AlbumModule())
+        return getAlbumComponent!!
+    }
+
+    fun createTrackListComponent() : GetTracksComponent{
+        getTracksComponent = mainComponent.plus(TracksModule())
+        return getTracksComponent!!
+    }
+
     fun releaseSearchComponent() {
         searchComponent = null
+    }
+
+    fun releaseAlbumListComponent(){
+        getAlbumComponent = null
+    }
+
+    fun releaseTrackListComponent(){
+        getTracksComponent = null
     }
 
 

@@ -1,6 +1,6 @@
 package com.rupak.project.domain.utils
 
-import com.rupak.project.domain.entities.Optional
+import com.rupak.project.domain.entities.common.Optional
 import io.reactivex.Observable
 
 
